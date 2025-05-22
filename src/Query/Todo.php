@@ -11,6 +11,7 @@ class Todo extends BaseQuery
             'taskname'  => $task,
             'statusval' => "todo",
         ]);
+        
         return $this->db->lastInsertId();
     }
 

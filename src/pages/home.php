@@ -34,10 +34,10 @@
       <tbody id="todoitems">
         <?php foreach ($tasks as $task): ?>
           <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200" id="singleitem">
-            <td class="px-6 py-4"><?php echo htmlspecialchars($task['id'])?></td>
-            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?php echo htmlspecialchars($task['task_name'])?></td>
+            <td class="px-6 py-4"><?php echo htmlspecialchars($task['id']) ?></td>
+            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"><?php echo htmlspecialchars($task['task_name']) ?></td>
             <td class="px-6 py-4">
-            <a hx-get="/task?action=showedit&id=<?php echo urlencode($task['id'])?>"
+            <a hx-get="/task?action=showedit&id=<?php echo urlencode($task['id']) ?>"
    hx-target="closest tr"
    hx-swap="outerHTML"
    class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
@@ -45,13 +45,14 @@
 </a>
             </td>
             <td class="px-6 py-4">
-              <a hx-get="/task?action=delete&id=<?php echo urlencode($task['id'])?>" hx-target="closest tr"
+              <a hx-get="/task?action=delete&id=<?php echo urlencode($task['id']) ?>" hx-target="closest tr"
               hx-swap="outerHTML"
               class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</a>
             </td>
             <td class="px-6 py-4">
-              <a hx-get="/task?action=mark&id=<?php echo urlencode($task['id'])?>"   class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">
-              <?php echo urlencode($task['status'])?></a>
+              <span id="mark-button-<?php echo $task['id']?>" hx-get="/task?action=mark&id=<?php echo $task['id']?>" hx-swap="outerHTML">
+  <a class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-900">Done</a>
+</span>
             </td>
           </tr>
         <?php endforeach; ?>
