@@ -1,0 +1,19 @@
+{
+  "name": "todo/todo",
+  "description": "A todo list",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": [
+      "src/Debug/dd.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "PinkuInraft",
+      "email": "pinkuagarwal2831@gmail.com"
+    }
+  ],
+  "require": {}
+}
