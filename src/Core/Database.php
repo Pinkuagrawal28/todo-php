@@ -6,10 +6,16 @@ use PDO;
 use PDOException;
 use Exception;
 
+/***
+   * This classes Handles Database Connection
+   */
 class Database
 {
     private static ?PDO $pdo = null;
 
+    /***
+   * This is function connects with the db via PDO
+   */
     public static function pdo(): PDO
     {
         if (self::$pdo) {

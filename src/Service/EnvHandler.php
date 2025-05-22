@@ -1,10 +1,16 @@
 <?php
 namespace App\Service;
 
+/***
+   * This classes Handles Env Operations
+   */
 class EnvHandler
 {
     protected array $env;
 
+    /***
+   * This is function initializes the env handler
+   */
     public function __construct()
     {
         // Load only once per request if not already loaded
@@ -16,6 +22,9 @@ class EnvHandler
         $this->env = $_ENV;
     }
 
+    /***
+   * This is function load all the ENV from the file
+   */
     protected function loadEnv(): void
     {
         $envPath = BASE_PATH . '/.env';
@@ -32,7 +41,11 @@ class EnvHandler
             $_ENV[$name] = $value;
         }
     }
-
+    /***
+   * This is function returns all the env Values
+   * @params string key
+   * @return mixed envValues
+   */
     public function get(string $key, mixed $default = null): mixed
     {
         return $this->env[$key] ?? $default;

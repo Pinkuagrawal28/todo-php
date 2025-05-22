@@ -5,10 +5,16 @@ namespace App\Query;
 use App\Core\Database;
 use PDO;
 
+/***
+   * This classes Handles BaseQueries for PDO
+   */
 abstract class BaseQuery
 {
     protected PDO $db;
 
+    /***
+   * This is function initializes the pdo for the Base Query
+   */
     public function __construct()
     {
         $this->db = DataBase::pdo();

@@ -5,8 +5,14 @@ use App\Action\Addtask;
 use App\Action\ShowTask;
 use App\Action\TaskAction;
 
+/***
+   * This classes Handles Initialization of backend
+   */
 class App
 {
+    /***
+   * This is function initializse everything to run the app
+   */
     public function run()
     {
         $uri    = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

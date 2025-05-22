@@ -3,17 +3,27 @@
 
     use App\Query\Todo;
 
+    /***
+   * This classes Handles Action related to edit, delete and status
+   */
     class TaskAction
     {
         protected $id;
         protected $mark;
 
-        public function __construct($id, $stats)
-        {
+        /***
+   * This is constructor of the class
+   * @param int id
+   * @param string stats
+   */
+        public function __construct($id, $stats){
             $this->id   = $id;
             $this->mark = $stats;
         }
 
+        /***
+   * This is function delete a particular todo from the db based on id
+   */
         public function delete()
         {
             $todo = new Todo();
@@ -24,6 +34,9 @@
             }
         }
 
+        /***
+   * This is function set the value of status of tasks
+   */
         public function mark()
         {
             $todo = new Todo();
@@ -45,7 +58,9 @@
             </div>
             HTML;
         }
-
+        /***
+   * This is function allows the user to edit the functions
+   */
         public function showedit()
         {
             $todo     = new Todo();
@@ -67,6 +82,9 @@
     HTML;
         }
 
+        /***
+   * This is function edits the tasks in the db and the ui
+   */
         public function edit()
         {
             $newValue = $_POST["updatedtask"];

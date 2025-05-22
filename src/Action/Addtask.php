@@ -4,7 +4,13 @@ namespace App\Action;
 
 use App\Query\Todo;
 
+/***
+   * This classes Adding task to the app
+   */
 class Addtask {
+  /***
+   * This is the Action that handles adding the item to the db and ui
+   */
     public function action() {
         $task = $_POST["task"] ?? '';
 
